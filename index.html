@@ -16,23 +16,26 @@
       overflow-x: hidden;
     }
 
-    /* Czyste kosmiczne tło */
+    /* Kosmiczne tło */
     body::before {
       content: '';
       position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at 30% 20%, rgba(168,85,247,0.25) 0%, transparent 60%),
-                  radial-gradient(circle at 70% 80%, rgba(34,211,238,0.25) 0%, transparent 60%);
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(168,85,247,0.45) 0%, transparent 60%),
+                  radial-gradient(circle at 70% 80%, rgba(34,211,238,0.45) 0%, transparent 60%),
+                  radial-gradient(circle at 50% 50%, rgba(99,102,241,0.3) 0%, transparent 70%);
       z-index: -2;
     }
 
     .stars {
       position: fixed;
-      inset: 0;
+      top: 0; left: 0; width: 100%; height: 100%;
       background: transparent;
-      box-shadow: 80px 120px 1px #fff, 220px 80px 1px #fff, 350px 250px 1px #fff, 480px 150px 1px #fff,
-                  620px 380px 1px #fff, 750px 90px 1px #fff, 880px 420px 1px #fff, 1050px 180px 1px #fff,
-                  180px 480px 1px #fff, 410px 520px 1px #fff, 690px 620px 1px #fff;
+      box-shadow: 
+        80px 120px 1px #fff, 220px 80px 1px #fff, 350px 250px 1px #fff,
+        480px 150px 1px #fff, 620px 380px 1px #fff, 750px 90px 1px #fff,
+        880px 420px 1px #fff, 1050px 180px 1px #fff, 180px 480px 1px #fff,
+        410px 520px 1px #fff, 690px 620px 1px #fff;
       animation: twinkle 4s infinite alternate;
       z-index: -1;
       pointer-events: none;
@@ -49,7 +52,6 @@
       text-align: center;
       position: relative;
       padding: 0 20px;
-      padding-top: 40px;
     }
 
     .main-logo {
@@ -88,16 +90,27 @@
       font-size: 1.3rem;
       font-weight: 600;
       text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-primary:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(168,85,247,0.8);
     }
 
     .section { padding: 140px 20px; background: rgba(5,5,15,0.92); }
     .container { max-width: 1200px; margin: 0 auto; }
+
+    /* Formularz - pola jedno pod drugim */
+    form {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    input, textarea {
+      padding: 18px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(168,85,247,0.5);
+      border-radius: 12px;
+      color: white;
+      font-size: 1.1rem;
+    }
   </style>
 </head>
 <body>
@@ -118,7 +131,6 @@
     <a href="#contact" class="btn-primary">Start a Project</a>
   </section>
 
-  <!-- Services -->
   <section id="services" class="section">
     <div class="container">
       <h2>Our Services</h2>
