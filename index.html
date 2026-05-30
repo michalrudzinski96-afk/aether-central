@@ -25,20 +25,12 @@
       text-align: center;
       position: relative;
       padding: 0 20px;
-      padding-top: 60px; /* przesunięcie logo wyżej */
-    }
-
-    .main-logo {
-      width: 480px;
-      max-width: 85vw;
-      height: auto;
-      filter: drop-shadow(0 0 60px rgba(34, 211, 238, 0.85));
-      margin-bottom: 40px;
+      padding-top: 40px;
     }
 
     .hero-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 3.5rem;
+      font-size: 3.6rem;
       line-height: 1.1;
       margin-bottom: 20px;
     }
@@ -72,10 +64,7 @@
       box-shadow: 0 0 40px rgba(168,85,247,0.8);
     }
 
-    .section { 
-      padding: 140px 20px; 
-      background: rgba(5,5,15,0.92); 
-    }
+    .section { padding: 140px 20px; background: rgba(5,5,15,0.92); }
     .container { max-width: 1200px; margin: 0 auto; }
 
     form {
@@ -97,55 +86,38 @@
 </head>
 <body>
 
-  <!-- HERO -->
   <section id="home" class="hero">
-    <!-- Widoczne logo nad tekstem -->
-    <img 
-      src="assets/aether-central-logo.png" 
-      alt="Aether Central" 
-      class="main-logo">
-
     <h1 class="hero-title">
       Elevate your <span class="gradient-text">Business Central</span><br>to the Cosmos
     </h1>
 
     <p class="subtitle">
-      Team of 5 expert developers specializing in customization, automation, migrations &amp; implementations of Microsoft Dynamics 365 Business Central.
+      Team of expert developers specializing in customization, automation, migrations &amp; implementations of Microsoft Dynamics 365 Business Central.
     </p>
 
     <a href="#contact" class="btn-primary">Start a Project</a>
   </section>
 
-  <!-- Services -->
+  <!-- Services, About, Contact – bez zmian -->
   <section id="services" class="section">
     <div class="container">
       <h2>Our Services</h2>
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; margin-top:60px;">
-        <div class="card" style="background:rgba(255,255,255,0.07); padding:2rem; border-radius:20px; border:1px solid rgba(168,85,247,0.3);">
-          <h3>Customization</h3><p>Extensions, new functionalities, and tailoring the system to your unique business processes.</p>
-        </div>
-        <div class="card" style="background:rgba(255,255,255,0.07); padding:2rem; border-radius:20px; border:1px solid rgba(168,85,247,0.3);">
-          <h3>Process Automation</h3><p>Power Automate, AL language, and Power Platform integrations — eliminating manual work.</p>
-        </div>
-        <div class="card" style="background:rgba(255,255,255,0.07); padding:2rem; border-radius:20px; border:1px solid rgba(168,85,247,0.3);">
-          <h3>Migrations &amp; Upgrades</h3><p>Safe data migration and transition to the latest versions of Business Central.</p>
-        </div>
-        <div class="card" style="background:rgba(255,255,255,0.07); padding:2rem; border-radius:20px; border:1px solid rgba(168,85,247,0.3);">
-          <h3>Implementations</h3><p>End-to-end implementations — from analysis to user training.</p>
-        </div>
+        <div class="card" style="background:rgba(255,255,255,0.07); padding:2rem; border-radius:20px; border:1px solid rgba(168,85,247,0.3);"><h3>Customization</h3><p>Extensions, new functionalities, and tailoring the system to your unique business processes.</p></div>
+        <div class="card" style="background:rgba(255,255,255,0.07); padding:2rem; border-radius:20px; border:1px solid rgba(168,85,247,0.3);"><h3>Process Automation</h3><p>Power Automate, AL language, and Power Platform integrations — eliminating manual work.</p></div>
+        <div class="card" style="background:rgba(255,255,255,0.07); padding:2rem; border-radius:20px; border:1px solid rgba(168,85,247,0.3);"><h3>Migrations &amp; Upgrades</h3><p>Safe data migration and transition to the latest versions of Business Central.</p></div>
+        <div class="card" style="background:rgba(255,255,255,0.07); padding:2rem; border-radius:20px; border:1px solid rgba(168,85,247,0.3);"><h3>Implementations</h3><p>End-to-end implementations — from analysis to user training.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- About Us -->
   <section id="about" class="section">
     <div class="container">
       <h2>About Us</h2>
-      <p>We are a compact, highly specialized team of 5 developers with many years of experience focused exclusively on Microsoft Dynamics 365 Business Central.</p>
+      <p>We are a compact, highly specialized team of developers with many years of experience focused exclusively on Microsoft Dynamics 365 Business Central.</p>
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact" class="section">
     <div class="container">
       <h2>Get in Touch</h2>
@@ -153,7 +125,7 @@
         <input type="text" id="name" placeholder="Full Name" required>
         <input type="email" id="email" placeholder="Business Email" required>
         <input type="tel" id="phone" placeholder="Phone (optional)">
-        <textarea id="message" placeholder="Describe your needs." rows="6" required></textarea>
+        <textarea id="message" placeholder="Describe your needs..." rows="6" required></textarea>
         <button type="submit" class="btn-primary">Send Message</button>
       </form>
     </div>
