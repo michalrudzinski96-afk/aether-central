@@ -10,21 +10,13 @@
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- Minimalistyczny navbar (overlay) -->
   <nav class="navbar">
     <div class="container">
-      <div class="logo">
-        <!-- Duże logo z załącznika (rozmiar 210px) -->
-        <img 
-          src="assets/aether-central-logo.png" 
-          alt="Aether Central" 
-          width="210" 
-          height="210"
-          style="filter: drop-shadow(0 0 25px rgba(34, 211, 238, 0.6));">
-        <span>Aether Central</span>
+      <div class="logo-small">
+        <img src="assets/aether-central-logo.png" alt="Aether Central" width="48" height="48">
       </div>
       <ul>
-        <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -32,12 +24,27 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- GŁÓWNA SEKCJA HERO – dokładnie tak jak chciałeś -->
   <section id="home" class="hero">
     <canvas id="particles-js" class="particles"></canvas>
+    
     <div class="hero-content">
-      <h1>Elevate your <span class="gradient-text">Business Central</span><br>to the Cosmos</h1>
-      <p class="subtitle">Team of 5 expert developers specializing in customization, automation, migrations & implementations of Microsoft Dynamics 365 Business Central.</p>
+      <!-- Bardzo duże logo (prawie oryginalny rozmiar) -->
+      <img 
+        src="assets/aether-central-logo.png" 
+        alt="Aether Central" 
+        class="main-logo"
+        width="460" 
+        height="460">
+
+      <h1 class="hero-title">
+        Elevate your <span class="gradient-text">Business Central</span><br>to the Cosmos
+      </h1>
+      
+      <p class="subtitle">
+        Team of 5 expert developers specializing in customization, automation, migrations &amp; implementations of Microsoft Dynamics 365 Business Central.
+      </p>
+
       <a href="#contact" class="btn-primary">Start a Project</a>
     </div>
   </section>
@@ -47,7 +54,55 @@
     <div class="container">
       <h2>Our Services</h2>
       <div class="services-grid">
-        <div class="card">
-          <h3>Customization</h3>
-          <p>Extensions, new functionalities, and tailoring the system to your unique business processes.</p>
-       
+        <div class="card"><h3>Customization</h3><p>Extensions, new functionalities, and tailoring the system to your unique business processes.</p></div>
+        <div class="card"><h3>Process Automation</h3><p>Power Automate, AL language, and Power Platform integrations — eliminating manual work.</p></div>
+        <div class="card"><h3>Migrations &amp; Upgrades</h3><p>Safe data migration and transition to the latest versions of Business Central.</p></div>
+        <div class="card"><h3>Implementations</h3><p>End-to-end implementations — from analysis to user training.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We are a compact, highly specialized team of 5 developers with many years of experience focused exclusively on Microsoft Dynamics 365 Business Central.</p>
+      <p>We combine deep technical expertise with practical business understanding to deliver solutions that genuinely increase efficiency.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Business Email" required>
+        <input type="tel" id="phone" placeholder="Phone (optional)">
+        <textarea id="message" placeholder="Describe your needs..." rows="6" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+      <p id="formStatus"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 220, density: { enable: true, value_area: 800 } },
+        color: { value: ["#22d3ee", "#a855f7", "#6366f1", "#c084fc"] },
+        shape: { type: "circle" },
+        opacity: { value: 0.85, random: true },
+        size: { value: 3, random: true },
+        move: { enable: true, speed: 0.6, direction: "none", random: true }
+      },
+      interactivity: { events: { onhover: { enable: true, mode: "bubble" } } }
+    });
+  </script>
+</body>
+</html>
