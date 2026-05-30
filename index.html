@@ -10,43 +10,10 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #05050f;
+      background: #000000;
       color: #e0e0ff;
       min-height: 100vh;
       overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Mocne kosmiczne tło z gwiazdami i mgławicami */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: 
-        radial-gradient(circle at 25% 25%, rgba(168,85,247,0.5) 0%, transparent 55%),
-        radial-gradient(circle at 75% 75%, rgba(34,211,238,0.5) 0%, transparent 55%),
-        radial-gradient(circle at 50% 35%, rgba(99,102,241,0.35) 0%, transparent 70%);
-      z-index: -2;
-    }
-
-    .stars {
-      position: fixed;
-      inset: 0;
-      background: transparent;
-      box-shadow: 
-        80px 120px 1px #fff, 220px 80px 1px #fff, 350px 250px 1px #fff,
-        480px 150px 1px #fff, 620px 380px 1px #fff, 750px 90px 1px #fff,
-        880px 420px 1px #fff, 1050px 180px 1px #fff, 180px 480px 1px #fff,
-        410px 520px 1px #fff, 690px 620px 1px #fff, 920px 280px 1px #fff,
-        120px 650px 1px #fff, 550px 710px 1px #fff, 810px 50px 1px #fff;
-      animation: twinkle 4s infinite alternate;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    @keyframes twinkle {
-      0% { opacity: 0.4; }
-      100% { opacity: 1; }
     }
 
     .hero {
@@ -56,7 +23,6 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      position: relative;
       padding: 0 20px;
     }
 
@@ -64,7 +30,7 @@
       width: 520px;
       max-width: 85vw;
       height: auto;
-      filter: drop-shadow(0 0 70px rgba(34, 211, 238, 0.9));
+      filter: drop-shadow(0 0 60px rgba(34, 211, 238, 0.8));
       margin-bottom: 40px;
     }
 
@@ -104,7 +70,10 @@
       box-shadow: 0 0 40px rgba(168,85,247,0.8);
     }
 
-    .section { padding: 140px 20px; background: rgba(5,5,15,0.92); }
+    .section { 
+      padding: 140px 20px; 
+      background: #000000; 
+    }
     .container { max-width: 1200px; margin: 0 auto; }
 
     form {
@@ -116,7 +85,7 @@
     }
     input, textarea {
       padding: 18px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.08);
       border: 1px solid rgba(168,85,247,0.5);
       border-radius: 12px;
       color: white;
@@ -127,9 +96,6 @@
 <body>
 
   <section id="home" class="hero">
-    <div class="stars"></div>
-
-    <!-- Logo z Twojego załącznika - wysoko nad tekstem -->
     <img src="assets/aether-central-logo.png" alt="Aether Central" class="main-logo">
 
     <h1 class="hero-title">
@@ -143,7 +109,6 @@
     <a href="#contact" class="btn-primary">Start a Project</a>
   </section>
 
-  <!-- Services -->
   <section id="services" class="section">
     <div class="container">
       <h2>Our Services</h2>
@@ -176,8 +141,8 @@
     </div>
   </section>
 
-  <footer style="text-align:center; padding:80px 20px; background:rgba(5,5,15,0.95);">
-    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v1.2</p>
+  <footer style="text-align:center; padding:80px 20px; background:#000000;">
+    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v1.3</p>
   </footer>
 
 </body>
