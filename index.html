@@ -27,11 +27,23 @@
       padding: 0 20px;
     }
 
+    /* Poprawiona responsywność logo */
     .main-logo {
-      width: 520px;
-      max-width: 85vw;
+      width: auto;
+      max-width: 520px;
       height: auto;
       margin-bottom: 40px;
+      filter: drop-shadow(0 0 60px rgba(34, 211, 238, 0.8));
+    }
+
+    /* Na telefonach logo jest trochę mniejsze */
+    @media (max-width: 768px) {
+      .main-logo {
+        max-width: 75vw;
+      }
+      .hero-title {
+        font-size: 2.8rem;
+      }
     }
 
     .hero-title {
@@ -65,10 +77,6 @@
       display: inline-block;
     }
 
-    .btn-primary:hover {
-      transform: scale(1.05);
-    }
-
     .section { padding: 140px 20px; background: #000000; }
     .container { max-width: 1200px; margin: 0 auto; }
 
@@ -91,7 +99,6 @@
 </head>
 <body>
 
-  <!-- Hero -->
   <section id="home" class="hero">
     <img src="assets/aether-central-logo.png" alt="Aether Central" class="main-logo">
 
@@ -106,7 +113,6 @@
     <a href="#contact" class="btn-primary">Start a Project</a>
   </section>
 
-  <!-- Services -->
   <section id="services" class="section">
     <div class="container">
       <h2>Our Services</h2>
@@ -119,7 +125,6 @@
     </div>
   </section>
 
-  <!-- About Us -->
   <section id="about" class="section">
     <div class="container">
       <h2>About Us</h2>
@@ -127,7 +132,6 @@
     </div>
   </section>
 
-  <!-- Contact Form -->
   <section id="contact" class="section">
     <div class="container">
       <h2>Get in Touch</h2>
@@ -138,21 +142,18 @@
         <textarea id="message" placeholder="Describe your needs..." rows="6" required></textarea>
         <button type="submit" class="btn-primary">Send Message</button>
       </form>
-      <p id="formStatus" style="text-align:center; margin-top:20px; font-weight:500;"></p>
     </div>
   </section>
 
   <footer style="text-align:center; padding:80px 20px; background:#000000;">
-    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v1.7</p>
+    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v1.8</p>
   </footer>
 
   <script>
-    // Twoje dane EmailJS
     emailjs.init("-PSHdFFwiC4z7vK6u");
 
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
-
       const status = document.getElementById('formStatus');
       status.textContent = "Sending...";
       status.style.color = "#a0b0ff";
@@ -168,8 +169,8 @@
         status.style.color = "#22d3ee";
         document.getElementById('contactForm').reset();
       })
-      .catch((error) => {
-        console.error("EmailJS Error:", error);
+      .catch((err) => {
+        console.error(err);
         status.textContent = "❌ Error sending message. Please try again.";
         status.style.color = "#ff6666";
       });
