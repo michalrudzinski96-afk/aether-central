@@ -27,7 +27,6 @@
       padding: 80px 20px 60px;
     }
 
-    /* Logo - nie ucina się na telefonie */
     .main-logo {
       width: auto;
       max-width: 520px;
@@ -35,21 +34,9 @@
       margin-bottom: 40px;
     }
 
-    /* Responsywność dla telefonów */
     @media (max-width: 768px) {
-      .main-logo {
-        max-width: 78vw;           /* nie ucina się */
-      }
-      .hero-title {
-        font-size: 2.75rem;
-      }
-      .subtitle {
-        font-size: 1.25rem;
-      }
-      .hero {
-        padding-top: 70px;
-        padding-bottom: 80px;
-      }
+      .main-logo { max-width: 78vw; }
+      .hero-title { font-size: 2.75rem; }
     }
 
     .hero-title {
@@ -83,7 +70,7 @@
       display: inline-block;
     }
 
-    .section { padding: 120px 20px; background: #000000; }
+    .section { padding: 140px 20px; background: #000000; }
     .container { max-width: 1200px; margin: 0 auto; }
 
     form {
@@ -138,6 +125,7 @@
     </div>
   </section>
 
+  <!-- Kontakt -->
   <section id="contact" class="section">
     <div class="container">
       <h2>Get in Touch</h2>
@@ -148,11 +136,12 @@
         <textarea id="message" placeholder="Describe your needs..." rows="6" required></textarea>
         <button type="submit" class="btn-primary">Send Message</button>
       </form>
+      <p id="formStatus" style="text-align:center; margin-top:20px; font-weight:500;"></p>
     </div>
   </section>
 
   <footer style="text-align:center; padding:80px 20px; background:#000000;">
-    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v2.0</p>
+    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v1.0</p>
   </footer>
 
   <script>
@@ -160,6 +149,7 @@
 
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
+
       const status = document.getElementById('formStatus');
       status.textContent = "Sending...";
       status.style.color = "#a0b0ff";
@@ -171,11 +161,12 @@
         message: document.getElementById("message").value
       })
       .then(() => {
-        status.textContent = "✅ Message sent successfully!";
+        status.textContent = "✅ Message sent successfully! We will reply soon.";
         status.style.color = "#22d3ee";
         document.getElementById('contactForm').reset();
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error(error);
         status.textContent = "❌ Error sending message. Please try again.";
         status.style.color = "#ff6666";
       });
