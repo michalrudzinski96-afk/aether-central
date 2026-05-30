@@ -1,233 +1,78 @@
-/* === ADVANCED COSMIC BACKGROUND === */
+* { margin:0; padding:0; box-sizing:border-box; }
+
 body {
   font-family: 'Inter', sans-serif;
-  background: #05050f;
   color: #e0e0ff;
-  line-height: 1.6;
   overflow-x: hidden;
+  background: #0a0a1f;
 }
 
-/* Multi-layer nebula + stars effect */
+/* === MOCNE KOSMICZNE TŁO === */
 body::before {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0; width: 100%; height: 100%;
   background: 
-    /* Deep space base */
-    linear-gradient(180deg, #0a051f 0%, #05050f 100%),
-    /* Nebula layers */
-    radial-gradient(ellipse 120% 80% at 25% 30%, rgba(139, 92, 246, 0.35) 0%, transparent 65%),
-    radial-gradient(ellipse 90% 70% at 75% 70%, rgba(34, 211, 238, 0.28) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(236, 72, 153, 0.2) 0%, transparent 70%);
+    radial-gradient(circle at 30% 20%, rgba(168, 85, 247, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(34, 211, 238, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
   z-index: -2;
-  animation: nebulaDrift 40s ease-in-out infinite;
   pointer-events: none;
 }
 
-@keyframes nebulaDrift {
-  0% { opacity: 0.85; }
-  50% { opacity: 1; }
-  100% { opacity: 0.85; }
-}
-
-/* Subtle star field via CSS */
-body::after {
-  content: '';
+.particles {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(white 0.8px, transparent 1px),
-    radial-gradient(white 0.6px, transparent 1px);
-  background-size: 3px 3px, 5px 5px;
-  background-position: 0 0, 2px 2px;
-  opacity: 0.6;
+  top: 0; left: 0; width: 100%; height: 100%;
   z-index: -1;
-  pointer-events: none;
+  opacity: 0.9;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 2;
-}
-
-/* Navbar */
+/* Reszta stylów (navbar, hero, cards itd.) */
 .navbar {
   position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(5, 5, 15, 0.92);
-  backdrop-filter: blur(14px);
+  top: 0; width: 100%;
+  background: rgba(10, 10, 31, 0.95);
+  backdrop-filter: blur(12px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(167, 85, 247, 0.2);
 }
 
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.1rem 20px;
-}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 1.65rem;
+  gap: 12px;
+  font-size: 1.8rem;
   font-weight: 700;
-  color: #e0e0ff;
 }
 
-.logo svg {
-  filter: drop-shadow(0 0 20px rgba(167, 85, 247, 0.8));
-  width: 56px;
-  height: 56px;
-}
+.logo svg { filter: drop-shadow(0 0 15px rgba(34, 211, 238, 0.6)); }
 
-/* Hero */
 .hero {
   height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, #0f172a 0%, #1e0b3d 100%);
-}
-
-.particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.hero-content {
-  max-width: 920px;
-  z-index: 3;
-  padding-left: 60px;
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #6366f1, #a855f7, #22d3ee);
+  background: linear-gradient(90deg, #22d3ee, #a855f7, #6366f1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 60px rgba(167, 85, 247, 0.4);
-}
-
-h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 4.2rem;
-  line-height: 1.02;
-  margin-bottom: 1.1rem;
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-
-.subtitle {
-  font-size: 1.4rem;
-  margin-bottom: 2.8rem;
-  opacity: 0.92;
 }
 
 .btn-primary {
   background: linear-gradient(90deg, #6366f1, #a855f7);
   color: white;
-  padding: 17px 42px;
-  border: none;
-  border-radius: 60px;
-  font-size: 1.15rem;
+  padding: 16px 36px;
+  border-radius: 50px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 12px 35px rgba(167, 85, 247, 0.45);
+  text-decoration: none;
 }
 
-.btn-primary:hover {
-  transform: translateY(-5px) scale(1.04);
-  box-shadow: 0 25px 50px rgba(167, 85, 247, 0.6);
-}
+.section { padding: 100px 0; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.card { background: rgba(255,255,255,0.06); padding: 2rem; border-radius: 20px; border: 1px solid rgba(168,85,247,0.3); }
 
-/* Sections */
-.section {
-  padding: 130px 0;
-  position: relative;
-  z-index: 2;
-}
-
-h2 {
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 4.5rem;
-  font-family: 'Space Grotesk', sans-serif;
-  background: linear-gradient(90deg, #e0e0ff, #c084fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Cards */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-  gap: 2.2rem;
-}
-
-.card {
-  background: rgba(255,255,255,0.055);
-  padding: 2.6rem 2.3rem;
-  border-radius: 26px;
-  border: 1px solid rgba(167, 85, 247, 0.25);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(16px);
-}
-
-.card:hover {
-  transform: translateY(-14px);
-  border-color: #a855f7;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
-}
-
-/* Form - STACKED */
-form {
-  max-width: 720px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.3rem;
-}
-
-input, textarea {
-  padding: 17px 26px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(167, 85, 247, 0.3);
-  border-radius: 18px;
-  color: white;
-  font-size: 1.08rem;
-  backdrop-filter: blur(10px);
-  width: 100%;
-}
-
-input::placeholder, textarea::placeholder {
-  color: #94a3b8;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 4.5rem 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  opacity: 0.75;
-}
-
-@media (max-width: 768px) {
-  h1 { font-size: 2.9rem; }
-  .hero-content { padding-left: 25px; }
-}
+form { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+input, textarea { padding: 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(168,85,247,0.4); border-radius: 12px; color: white; }
