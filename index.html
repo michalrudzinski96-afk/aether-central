@@ -6,14 +6,13 @@
   <title>Aether Central | Microsoft Business Central Experts</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
-      color: #e0e0ff;
       background: #05050f;
+      color: #e0e0ff;
       overflow-x: hidden;
-      min-height: 100vh;
     }
 
     /* === BARDZO MOCNE KOSMICZNE TŁO === */
@@ -22,60 +21,34 @@
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       background: 
-        radial-gradient(circle at 20% 30%, rgba(168, 85, 247, 0.45) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(34, 211, 238, 0.45) 0%, transparent 50%),
-        radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.35) 0%, transparent 60%),
-        radial-gradient(circle at 40% 80%, rgba(192, 132, 252, 0.3) 0%, transparent 55%);
+        radial-gradient(circle at 25% 25%, rgba(168,85,247,0.5) 0%, transparent 55%),
+        radial-gradient(circle at 75% 75%, rgba(34,211,238,0.5) 0%, transparent 55%),
+        radial-gradient(circle at 50% 40%, rgba(99,102,241,0.35) 0%, transparent 65%);
       z-index: -2;
       pointer-events: none;
     }
 
-    /* Dodatkowe warstwy mgławic */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 70%);
-      z-index: -1;
-      animation: nebula 25s ease infinite;
-      pointer-events: none;
-    }
-
-    @keyframes nebula {
-      0%   { opacity: 0.7; }
-      50%  { opacity: 1; }
-      100% { opacity: 0.7; }
-    }
-
-    /* Gwiazdy CSS */
+    /* Migoczące gwiazdy */
     .stars {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      z-index: -1;
       background: transparent;
       box-shadow: 
-        50px 80px 1px #fff,
-        120px 200px 1px #fff,
-        300px 150px 1px #fff,
-        450px 300px 1px #fff,
-        600px 80px 1px #fff,
-        750px 400px 1px #fff,
-        900px 120px 1px #fff,
-        1100px 350px 1px #fff,
-        200px 500px 1px #fff,
-        800px 600px 1px #fff,
-        350px 650px 1px #fff,
-        1000px 200px 1px #fff;
-      animation: twinkle 4s infinite alternate;
+        80px 120px 1px #fff, 220px 80px 1px #fff, 350px 250px 1px #fff,
+        480px 150px 1px #fff, 620px 380px 1px #fff, 750px 90px 1px #fff,
+        880px 420px 1px #fff, 1050px 180px 1px #fff, 180px 480px 1px #fff,
+        410px 520px 1px #fff, 690px 620px 1px #fff, 920px 280px 1px #fff,
+        120px 650px 1px #fff, 550px 710px 1px #fff, 810px 50px 1px #fff;
+      animation: twinkle 3s infinite alternate ease-in-out;
+      z-index: -1;
       pointer-events: none;
     }
 
     @keyframes twinkle {
-      0% { opacity: 0.4; }
+      0% { opacity: 0.3; }
       100% { opacity: 1; }
     }
 
-    /* Główna sekcja hero */
     .hero {
       height: 100vh;
       display: flex;
@@ -91,15 +64,15 @@
       width: 520px;
       max-width: 90vw;
       height: auto;
-      filter: drop-shadow(0 0 50px rgba(34, 211, 238, 0.85));
+      filter: drop-shadow(0 0 60px rgba(34, 211, 238, 0.9));
       margin-bottom: 50px;
     }
 
     .hero-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 3.4rem;
+      font-size: 3.5rem;
       line-height: 1.1;
-      margin-bottom: 24px;
+      margin-bottom: 25px;
     }
 
     .gradient-text {
@@ -127,24 +100,45 @@
     }
 
     .btn-primary:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
+      transform: scale(1.06);
+      box-shadow: 0 0 40px rgba(168,85,247,0.8);
     }
 
-    /* Reszta strony */
     .section { padding: 120px 20px; background: #05050f; }
     .container { max-width: 1200px; margin: 0 auto; }
+
+    form {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input, textarea {
+      padding: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(168,85,247,0.4);
+      border-radius: 12px;
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(168,85,247,0.3);
+    }
   </style>
 </head>
 <body>
 
+  <!-- Główna sekcja hero -->
   <section id="home" class="hero">
     <div class="stars"></div>
-    
-    <img 
-      src="assets/aether-central-logo.png" 
-      alt="Aether Central" 
-      class="main-logo">
+
+    <img src="assets/aether-central-logo.png" alt="Aether Central" class="main-logo">
 
     <h1 class="hero-title">
       Elevate your <span class="gradient-text">Business Central</span><br>to the Cosmos
@@ -161,28 +155,16 @@
   <section id="services" class="section">
     <div class="container">
       <h2>Our Services</h2>
-      <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 60px;">
-        <div class="card" style="background: rgba(255,255,255,0.06); padding: 2rem; border-radius: 20px; border: 1px solid rgba(168,85,247,0.3);">
-          <h3>Customization</h3>
-          <p>Extensions, new functionalities, and tailoring the system to your unique business processes.</p>
-        </div>
-        <div class="card" style="background: rgba(255,255,255,0.06); padding: 2rem; border-radius: 20px; border: 1px solid rgba(168,85,247,0.3);">
-          <h3>Process Automation</h3>
-          <p>Power Automate, AL language, and Power Platform integrations — eliminating manual work.</p>
-        </div>
-        <div class="card" style="background: rgba(255,255,255,0.06); padding: 2rem; border-radius: 20px; border: 1px solid rgba(168,85,247,0.3);">
-          <h3>Migrations &amp; Upgrades</h3>
-          <p>Safe data migration and transition to the latest versions of Business Central.</p>
-        </div>
-        <div class="card" style="background: rgba(255,255,255,0.06); padding: 2rem; border-radius: 20px; border: 1px solid rgba(168,85,247,0.3);">
-          <h3>Implementations</h3>
-          <p>End-to-end implementations — from analysis to user training.</p>
-        </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; margin-top:60px;">
+        <div class="card"><h3>Customization</h3><p>Extensions, new functionalities, and tailoring the system to your unique business processes.</p></div>
+        <div class="card"><h3>Process Automation</h3><p>Power Automate, AL language, and Power Platform integrations — eliminating manual work.</p></div>
+        <div class="card"><h3>Migrations &amp; Upgrades</h3><p>Safe data migration and transition to the latest versions of Business Central.</p></div>
+        <div class="card"><h3>Implementations</h3><p>End-to-end implementations — from analysis to user training.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- About, Contact, Footer – możesz dodać później -->
+  <!-- About Us -->
   <section id="about" class="section">
     <div class="container">
       <h2>About Us</h2>
@@ -190,7 +172,22 @@
     </div>
   </section>
 
-  <footer style="text-align:center; padding: 60px 20px; background:#05050f; opacity:0.7;">
+  <!-- Contact Form -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Business Email" required>
+        <input type="tel" id="phone" placeholder="Phone (optional)">
+        <textarea id="message" placeholder="Describe your needs..." rows="6" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+      <p id="formStatus" style="text-align:center; margin-top:20px;"></p>
+    </div>
+  </section>
+
+  <footer style="text-align:center; padding:60px 20px; background:#05050f; opacity:0.7;">
     <p>&copy; 2026 Aether Central — Microsoft Business Central Experts</p>
   </footer>
 
