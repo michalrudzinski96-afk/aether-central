@@ -24,10 +24,10 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 40px 20px 60px;
+      padding: 80px 20px 60px;
     }
 
-    /* Logo - responsywne i nieucina się */
+    /* Logo - nie ucina się na telefonie */
     .main-logo {
       width: auto;
       max-width: 520px;
@@ -35,10 +35,10 @@
       margin-bottom: 40px;
     }
 
-    /* Na telefonach logo jest wyraźnie mniejsze */
+    /* Responsywność dla telefonów */
     @media (max-width: 768px) {
       .main-logo {
-        max-width: 72vw;
+        max-width: 78vw;           /* nie ucina się */
       }
       .hero-title {
         font-size: 2.75rem;
@@ -47,7 +47,7 @@
         font-size: 1.25rem;
       }
       .hero {
-        padding-top: 60px;
+        padding-top: 70px;
         padding-bottom: 80px;
       }
     }
@@ -152,7 +152,7 @@
   </section>
 
   <footer style="text-align:center; padding:80px 20px; background:#000000;">
-    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts</p>
+    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v2.0</p>
   </footer>
 
   <script>
