@@ -18,16 +18,16 @@
     }
 
     .hero {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 20px;
+      padding: 40px 20px 60px;
     }
 
-    /* Responsywne logo - nie ucina się na telefonie */
+    /* Logo - responsywne i nieucina się */
     .main-logo {
       width: auto;
       max-width: 520px;
@@ -35,15 +35,20 @@
       margin-bottom: 40px;
     }
 
+    /* Na telefonach logo jest wyraźnie mniejsze */
     @media (max-width: 768px) {
       .main-logo {
-        max-width: 82vw;        /* bezpieczna szerokość na telefonie */
+        max-width: 72vw;
       }
       .hero-title {
-        font-size: 2.7rem;
+        font-size: 2.75rem;
       }
       .subtitle {
         font-size: 1.25rem;
+      }
+      .hero {
+        padding-top: 60px;
+        padding-bottom: 80px;
       }
     }
 
@@ -143,12 +148,11 @@
         <textarea id="message" placeholder="Describe your needs..." rows="6" required></textarea>
         <button type="submit" class="btn-primary">Send Message</button>
       </form>
-      <p id="formStatus" style="text-align:center; margin-top:20px; font-weight:500;"></p>
     </div>
   </section>
 
   <footer style="text-align:center; padding:80px 20px; background:#000000;">
-    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v1.11</p>
+    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v1.12</p>
   </footer>
 
   <script>
