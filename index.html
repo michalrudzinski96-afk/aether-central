@@ -13,26 +13,37 @@
   <nav class="navbar">
     <div class="container">
       <div class="logo">
-        <!-- PROFESJONALNE LOGO SVG -->
-        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- ORIGINAL STYLE LOGO - Spiral Galaxy + Digital Streams -->
+        <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id="logoGrad" x1="12" y1="12" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+            <linearGradient id="galaxyCore" x1="20" y1="18" x2="38" y2="40" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stop-color="#22d3ee"/>
-              <stop offset="50%" stop-color="#a855f7"/>
+              <stop offset="40%" stop-color="#a855f7"/>
               <stop offset="100%" stop-color="#6366f1"/>
             </linearGradient>
+            <radialGradient id="outerNebula" cx="50%" cy="50%" r="50%" fx="35%" fy="30%">
+              <stop offset="0%" stop-color="#c084fc" stop-opacity="0.5"/>
+              <stop offset="55%" stop-color="#6366f1" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#1e0b3d" stop-opacity="0"/>
+            </radialGradient>
           </defs>
-          <!-- Mgławica w tle -->
-          <circle cx="26" cy="26" r="23" fill="#1e0b3d" opacity="0.6"/>
-          <!-- Spiralne ramiona galaktyki -->
-          <path d="M26 9 Q39 16 36 30 Q29 40 18 34" stroke="#c084fc" stroke-width="3" stroke-opacity="0.85"/>
-          <path d="M26 11 Q13 18 16 32 Q23 40 33 32" stroke="#67e8f9" stroke-width="2.5" stroke-opacity="0.75"/>
-          <!-- Cyfrowe strumienie danych -->
-          <path d="M11 21 L19 25 M33 27 L41 31" stroke="#22d3ee" stroke-width="1.8" stroke-opacity="0.6"/>
-          <path d="M13 33 L21 37 M31 15 L39 19" stroke="#a855f7" stroke-width="1.8" stroke-opacity="0.55"/>
-          <!-- Centralny rdzeń -->
-          <circle cx="26" cy="26" r="8" fill="url(#logoGrad)"/>
-          <circle cx="26" cy="26" r="3.8" fill="#ffffff"/>
+          <!-- Outer nebula glow -->
+          <circle cx="29" cy="29" r="27" fill="url(#outerNebula)"/>
+          <!-- Spiral galaxy arms -->
+          <path d="M29 8 Q44 15 41 31 Q33 44 20 38" stroke="#c084fc" stroke-width="3.5" stroke-opacity="0.9"/>
+          <path d="M29 10 Q14 17 17 33 Q25 44 38 36" stroke="#67e8f9" stroke-width="3" stroke-opacity="0.8"/>
+          <!-- Digital data streams (binary/code lines) -->
+          <path d="M8 18 L16 23 M42 35 L50 40" stroke="#22d3ee" stroke-width="2" stroke-opacity="0.7"/>
+          <path d="M10 36 L18 41 M40 17 L48 22" stroke="#a855f7" stroke-width="2" stroke-opacity="0.65"/>
+          <path d="M6 25 L14 29 M44 29 L52 33" stroke="#22d3ee" stroke-width="1.8" stroke-opacity="0.55"/>
+          <!-- Central bright core -->
+          <circle cx="29" cy="29" r="9" fill="url(#galaxyCore)"/>
+          <circle cx="29" cy="29" r="4.5" fill="#ffffff"/>
+          <!-- Small accent dots (stars/data points) -->
+          <circle cx="15" cy="15" r="1.5" fill="#67e8f9" opacity="0.8"/>
+          <circle cx="43" cy="43" r="1.5" fill="#c084fc" opacity="0.8"/>
+          <circle cx="12" cy="40" r="1.2" fill="#22d3ee" opacity="0.7"/>
+          <circle cx="46" cy="14" r="1.2" fill="#a855f7" opacity="0.7"/>
         </svg>
         <span>Aether Central</span>
       </div>
@@ -45,12 +56,12 @@
     </div>
   </nav>
 
-  <!-- Hero z zaawansowanym kosmicznym tłem -->
+  <!-- Hero -->
   <section id="home" class="hero">
     <canvas id="particles-js" class="particles"></canvas>
     <div class="hero-content">
       <h1>Elevate your <span class="gradient-text">Business Central</span><br>to the Cosmos</h1>
-      <p class="subtitle">Team of 5 expert developers delivering premium customization, automation, migrations &amp; implementations of Microsoft Dynamics 365 Business Central</p>
+      <p class="subtitle">Team of 5 expert developers delivering premium customization, automation, migrations & implementations of Microsoft Dynamics 365 Business Central</p>
       <a href="#contact" class="btn-primary">Start a Project</a>
     </div>
   </section>
@@ -62,7 +73,7 @@
       <div class="services-grid">
         <div class="card"><h3>Customization</h3><p>Extensions, new functionalities, and tailoring the system to your unique business processes.</p></div>
         <div class="card"><h3>Process Automation</h3><p>Power Automate, AL language, and Power Platform integrations — eliminating manual work.</p></div>
-        <div class="card"><h3>Migrations &amp; Upgrades</h3><p>Safe data migration and transition to the latest versions of Business Central.</p></div>
+        <div class="card"><h3>Migrations & Upgrades</h3><p>Safe data migration and transition to the latest versions of Business Central.</p></div>
         <div class="card"><h3>Implementations</h3><p>End-to-end implementations — from analysis to user training.</p></div>
       </div>
     </div>
@@ -100,16 +111,22 @@
   <script>
     particlesJS('particles-js', {
       "particles": {
-        "number": { "value": 180, "density": { "enable": true, "value_area": 900 } },
+        "number": { "value": 200, "density": { "enable": true, "value_area": 950 } },
         "color": { "value": ["#6366f1", "#a855f7", "#22d3ee", "#c084fc"] },
         "shape": { "type": "circle" },
-        "opacity": { "value": 0.7, "random": true },
-        "size": { "value": 2.8, "random": true },
-        "move": { "enable": true, "speed": 0.7, "direction": "none", "random": true }
+        "opacity": { "value": 0.75, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.4 } },
+        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 3, "size_min": 0.8 } },
+        "line_linked": { "enable": false },
+        "move": { "enable": true, "speed": 0.65, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
       },
       "interactivity": {
-        "events": { "onhover": { "enable": true, "mode": "bubble" } }
-      }
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "bubble" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      },
+      "retina_detect": true
     });
   </script>
 </body>
