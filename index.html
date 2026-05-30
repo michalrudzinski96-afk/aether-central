@@ -27,22 +27,11 @@
       padding: 0 20px;
     }
 
-    /* Logo bez podświetlenia + dobra responsywność */
     .main-logo {
       width: auto;
       max-width: 520px;
       height: auto;
       margin-bottom: 40px;
-    }
-
-    /* Na telefonach logo jest mniejsze, żeby się nie ucinało */
-    @media (max-width: 768px) {
-      .main-logo {
-        max-width: 78vw;
-      }
-      .hero-title {
-        font-size: 2.8rem;
-      }
     }
 
     .hero-title {
@@ -131,6 +120,7 @@
     </div>
   </section>
 
+  <!-- Formularz kontaktowy -->
   <section id="contact" class="section">
     <div class="container">
       <h2>Get in Touch</h2>
@@ -141,11 +131,12 @@
         <textarea id="message" placeholder="Describe your needs..." rows="6" required></textarea>
         <button type="submit" class="btn-primary">Send Message</button>
       </form>
+      <p id="formStatus" style="text-align:center; margin-top:20px; font-weight:500;"></p>
     </div>
   </section>
 
   <footer style="text-align:center; padding:80px 20px; background:#000000;">
-    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v1.9</p>
+    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts</p>
   </footer>
 
   <script>
@@ -153,6 +144,7 @@
 
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
+
       const status = document.getElementById('formStatus');
       status.textContent = "Sending...";
       status.style.color = "#a0b0ff";
@@ -164,11 +156,12 @@
         message: document.getElementById("message").value
       })
       .then(() => {
-        status.textContent = "✅ Message sent successfully!";
+        status.textContent = "✅ Message sent successfully! We will reply soon.";
         status.style.color = "#22d3ee";
         document.getElementById('contactForm').reset();
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error("Błąd EmailJS:", error);
         status.textContent = "❌ Error sending message. Please try again.";
         status.style.color = "#ff6666";
       });
