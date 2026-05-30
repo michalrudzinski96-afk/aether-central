@@ -8,104 +8,28 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #000000;
-      color: #e0e0ff;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    .main-logo {
-      width: 520px;
-      max-width: 85vw;
-      height: auto;
-      margin-bottom: 40px;
-    }
-
-    .hero-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 3.6rem;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, #22d3ee, #a855f7, #6366f1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .subtitle {
-      font-size: 1.45rem;
-      max-width: 780px;
-      margin: 0 auto 50px;
-      opacity: 0.95;
-    }
-
-    .btn-primary {
-      background: linear-gradient(90deg, #6366f1, #a855f7);
-      color: white;
-      padding: 20px 48px;
-      border-radius: 50px;
-      font-size: 1.3rem;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-primary:hover {
-      transform: scale(1.05);
-    }
-
+    body { font-family: 'Inter', sans-serif; background: #000000; color: #e0e0ff; min-height: 100vh; overflow-x: hidden; }
+    .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 20px; }
+    .main-logo { width: 520px; max-width: 85vw; height: auto; margin-bottom: 40px; }
+    .hero-title { font-family: 'Space Grotesk', sans-serif; font-size: 3.6rem; line-height: 1.1; margin-bottom: 20px; }
+    .gradient-text { background: linear-gradient(90deg, #22d3ee, #a855f7, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { font-size: 1.45rem; max-width: 780px; margin: 0 auto 50px; opacity: 0.95; }
+    .btn-primary { background: linear-gradient(90deg, #6366f1, #a855f7); color: white; padding: 20px 48px; border-radius: 50px; font-size: 1.3rem; font-weight: 600; text-decoration: none; display: inline-block; }
     .section { padding: 140px 20px; background: #000000; }
     .container { max-width: 1200px; margin: 0 auto; }
-
-    form {
-      max-width: 700px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    input, textarea {
-      padding: 18px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(168,85,247,0.5);
-      border-radius: 12px;
-      color: white;
-      font-size: 1.1rem;
-    }
+    form { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+    input, textarea { padding: 18px; background: rgba(255,255,255,0.08); border: 1px solid rgba(168,85,247,0.5); border-radius: 12px; color: white; font-size: 1.1rem; }
   </style>
 </head>
 <body>
 
   <section id="home" class="hero">
     <img src="assets/aether-central-logo.png" alt="Aether Central" class="main-logo">
-
-    <h1 class="hero-title">
-      Elevate your <span class="gradient-text">Business Central</span><br>to the Cosmos
-    </h1>
-
-    <p class="subtitle">
-      Team of 5 expert developers specializing in customization, automation, migrations &amp; implementations of Microsoft Dynamics 365 Business Central.
-    </p>
-
+    <h1 class="hero-title">Elevate your <span class="gradient-text">Business Central</span><br>to the Cosmos</h1>
+    <p class="subtitle">Team of 5 expert developers specializing in customization, automation, migrations &amp; implementations of Microsoft Dynamics 365 Business Central.</p>
     <a href="#contact" class="btn-primary">Start a Project</a>
   </section>
 
-  <!-- Services -->
   <section id="services" class="section">
     <div class="container">
       <h2>Our Services</h2>
@@ -118,15 +42,6 @@
     </div>
   </section>
 
-  <!-- About Us -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>We are a compact, highly specialized team of 5 developers with many years of experience focused exclusively on Microsoft Dynamics 365 Business Central.</p>
-    </div>
-  </section>
-
-  <!-- Kontakt - działający formularz -->
   <section id="contact" class="section">
     <div class="container">
       <h2>Get in Touch</h2>
@@ -142,36 +57,40 @@
   </section>
 
   <footer style="text-align:center; padding:80px 20px; background:#000000;">
-    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v1.5</p>
+    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v1.6</p>
   </footer>
 
   <script>
-    // === EMAILJS - Twoje dane ===
     emailjs.init("-PSHdFFwiC4z7vK6u");
 
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
       const status = document.getElementById('formStatus');
-      status.textContent = "Sending message...";
+      status.textContent = "Sending...";
       status.style.color = "#a0b0ff";
 
-      emailjs.send("service_5lqn24s", "template_xj80tbr", {
+      const templateParams = {
         from_name: document.getElementById("name").value,
         from_email: document.getElementById("email").value,
         phone: document.getElementById("phone").value || "—",
         message: document.getElementById("message").value
-      })
-      .then(() => {
-        status.textContent = "✅ Message sent successfully! We will reply soon.";
-        status.style.color = "#22d3ee";
-        document.getElementById('contactForm').reset();
-      })
-      .catch((err) => {
-        console.error(err);
-        status.textContent = "❌ Error sending message. Please try again later.";
-        status.style.color = "#ff6666";
-      });
+      };
+
+      console.log("📤 Wysyłam dane:", templateParams);   // ← debug
+
+      emailjs.send("service_5lqn24s", "template_xj80tbr", templateParams)
+        .then((response) => {
+          console.log("✅ Sukces!", response);
+          status.textContent = "✅ Message sent successfully!";
+          status.style.color = "#22d3ee";
+          document.getElementById('contactForm').reset();
+        })
+        .catch((error) => {
+          console.error("❌ Szczegóły błędu EmailJS:", error);
+          status.textContent = "❌ Error sending message. Check console (F12) for details.";
+          status.style.color = "#ff6666";
+        });
     });
   </script>
 </body>
