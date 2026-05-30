@@ -6,19 +6,15 @@
   <title>Aether Central | Microsoft Business Central Experts</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
       color: #e0e0ff;
-      overflow-x: hidden;
-      background: #05050f;
-    }
-
-    /* Kosmiczne tło (wysoka rozdzielczość) */
-    body {
       background: url('assets/cosmic-background.jpg') no-repeat center center fixed;
       background-size: cover;
+      min-height: 100vh;
+      position: relative;
     }
 
     .hero {
@@ -29,6 +25,7 @@
       justify-content: center;
       text-align: center;
       position: relative;
+      z-index: 2;
       padding: 0 20px;
     }
 
@@ -36,15 +33,16 @@
       width: 520px;
       max-width: 90vw;
       height: auto;
-      filter: drop-shadow(0 0 60px rgba(34, 211, 238, 0.85));
-      margin-bottom: 50px;
+      filter: drop-shadow(0 0 70px rgba(34, 211, 238, 0.9));
+      margin-bottom: 40px;
     }
 
     .hero-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 3.5rem;
+      font-size: 3.6rem;
       line-height: 1.1;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+      z-index: 3;
     }
 
     .gradient-text {
@@ -54,27 +52,115 @@
     }
 
     .subtitle {
-      font-size: 1.4rem;
-      max-width: 760px;
+      font-size: 1.45rem;
+      max-width: 780px;
       margin: 0 auto 50px;
       opacity: 0.95;
+      z-index: 3;
     }
 
     .btn-primary {
       background: linear-gradient(90deg, #6366f1, #a855f7);
       color: white;
-      padding: 18px 44px;
+      padding: 20px 48px;
       border-radius: 50px;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 600;
       text-decoration: none;
       display: inline-block;
+      z-index: 3;
     }
 
-    .btn-primary:hover {
-      transform: scale(1.06);
-      box-shadow: 0 0 40px rgba(168,85,247,0.8);
+    .section {
+      padding: 120px 20px;
+      background: rgba(5, 5, 15, 0.92);
+      position: relative;
+      z-index: 2;
     }
 
-    .section { 
-      padding: 120px 20
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* Formularz */
+    form {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input, textarea {
+      padding: 18px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(168,85,247,0.5);
+      border-radius: 12px;
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.07);
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(168,85,247,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <img src="assets/aether-central-logo.png" alt="Aether Central" class="main-logo">
+
+    <h1 class="hero-title">
+      Elevate your <span class="gradient-text">Business Central</span><br>to the Cosmos
+    </h1>
+
+    <p class="subtitle">
+      Team of 5 expert developers specializing in customization, automation, migrations &amp; implementations of Microsoft Dynamics 365 Business Central.
+    </p>
+
+    <a href="#contact" class="btn-primary">Start a Project</a>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 60px;">
+        <div class="card"><h3>Customization</h3><p>Extensions, new functionalities, and tailoring the system to your unique business processes.</p></div>
+        <div class="card"><h3>Process Automation</h3><p>Power Automate, AL language, and Power Platform integrations — eliminating manual work.</p></div>
+        <div class="card"><h3>Migrations &amp; Upgrades</h3><p>Safe data migration and transition to the latest versions of Business Central.</p></div>
+        <div class="card"><h3>Implementations</h3><p>End-to-end implementations — from analysis to user training.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We are a compact, highly specialized team of 5 developers with many years of experience focused exclusively on Microsoft Dynamics 365 Business Central.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Business Email" required>
+        <input type="tel" id="phone" placeholder="Phone (optional)">
+        <textarea id="message" placeholder="Describe your needs..." rows="6" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer style="text-align:center; padding:80px 20px; background:rgba(5,5,15,0.95);">
+    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts</p>
+  </footer>
+
+</body>
+</html>
