@@ -13,37 +13,41 @@
   <nav class="navbar">
     <div class="container">
       <div class="logo">
-        <!-- ORIGINAL STYLE LOGO - Spiral Galaxy + Digital Streams -->
-        <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- EXACT STYLE FROM ORIGINAL GENERATION - Spiral Galaxy + Digital Data Streams (LARGER) -->
+        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id="galaxyCore" x1="20" y1="18" x2="38" y2="40" gradientUnits="userSpaceOnUse">
+            <linearGradient id="coreGrad" x1="22" y1="20" x2="50" y2="52" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stop-color="#22d3ee"/>
-              <stop offset="40%" stop-color="#a855f7"/>
+              <stop offset="45%" stop-color="#a855f7"/>
               <stop offset="100%" stop-color="#6366f1"/>
             </linearGradient>
-            <radialGradient id="outerNebula" cx="50%" cy="50%" r="50%" fx="35%" fy="30%">
-              <stop offset="0%" stop-color="#c084fc" stop-opacity="0.5"/>
-              <stop offset="55%" stop-color="#6366f1" stop-opacity="0.25"/>
+            <radialGradient id="nebula" cx="50%" cy="50%" r="58%" fx="38%" fy="32%">
+              <stop offset="0%" stop-color="#c084fc" stop-opacity="0.55"/>
+              <stop offset="50%" stop-color="#6366f1" stop-opacity="0.3"/>
               <stop offset="100%" stop-color="#1e0b3d" stop-opacity="0"/>
             </radialGradient>
           </defs>
           <!-- Outer nebula glow -->
-          <circle cx="29" cy="29" r="27" fill="url(#outerNebula)"/>
-          <!-- Spiral galaxy arms -->
-          <path d="M29 8 Q44 15 41 31 Q33 44 20 38" stroke="#c084fc" stroke-width="3.5" stroke-opacity="0.9"/>
-          <path d="M29 10 Q14 17 17 33 Q25 44 38 36" stroke="#67e8f9" stroke-width="3" stroke-opacity="0.8"/>
-          <!-- Digital data streams (binary/code lines) -->
-          <path d="M8 18 L16 23 M42 35 L50 40" stroke="#22d3ee" stroke-width="2" stroke-opacity="0.7"/>
-          <path d="M10 36 L18 41 M40 17 L48 22" stroke="#a855f7" stroke-width="2" stroke-opacity="0.65"/>
-          <path d="M6 25 L14 29 M44 29 L52 33" stroke="#22d3ee" stroke-width="1.8" stroke-opacity="0.55"/>
+          <circle cx="36" cy="36" r="34" fill="url(#nebula)"/>
+          <!-- Main spiral arms -->
+          <path d="M36 6 Q56 17 52 38 Q40 54 22 46" stroke="#c084fc" stroke-width="5" stroke-opacity="0.92"/>
+          <path d="M36 8 Q16 19 20 40 Q32 54 48 44" stroke="#67e8f9" stroke-width="4.2" stroke-opacity="0.85"/>
+          <!-- Secondary spiral details -->
+          <path d="M36 13 Q50 22 47 36 Q39 46 26 41" stroke="#a855f7" stroke-width="2.8" stroke-opacity="0.6"/>
+          <!-- Digital data streams (circuit/binary lines) -->
+          <path d="M5 24 L16 30 M56 42 L67 48" stroke="#22d3ee" stroke-width="2.5" stroke-opacity="0.75"/>
+          <path d="M7 42 L18 48 M54 24 L65 30" stroke="#a855f7" stroke-width="2.5" stroke-opacity="0.7"/>
+          <path d="M3 32 L14 37 M58 35 L69 40" stroke="#22d3ee" stroke-width="2" stroke-opacity="0.6"/>
           <!-- Central bright core -->
-          <circle cx="29" cy="29" r="9" fill="url(#galaxyCore)"/>
-          <circle cx="29" cy="29" r="4.5" fill="#ffffff"/>
-          <!-- Small accent dots (stars/data points) -->
-          <circle cx="15" cy="15" r="1.5" fill="#67e8f9" opacity="0.8"/>
-          <circle cx="43" cy="43" r="1.5" fill="#c084fc" opacity="0.8"/>
-          <circle cx="12" cy="40" r="1.2" fill="#22d3ee" opacity="0.7"/>
-          <circle cx="46" cy="14" r="1.2" fill="#a855f7" opacity="0.7"/>
+          <circle cx="36" cy="36" r="11.5" fill="url(#coreGrad)"/>
+          <circle cx="36" cy="36" r="5.5" fill="#ffffff"/>
+          <!-- Accent stars / data points -->
+          <circle cx="12" cy="12" r="2.2" fill="#67e8f9" opacity="0.9"/>
+          <circle cx="60" cy="60" r="2.2" fill="#c084fc" opacity="0.9"/>
+          <circle cx="10" cy="50" r="1.8" fill="#22d3ee" opacity="0.8"/>
+          <circle cx="62" cy="14" r="1.8" fill="#a855f7" opacity="0.8"/>
+          <circle cx="18" cy="8" r="1.5" fill="#67e8f9" opacity="0.7"/>
+          <circle cx="54" cy="64" r="1.5" fill="#c084fc" opacity="0.7"/>
         </svg>
         <span>Aether Central</span>
       </div>
