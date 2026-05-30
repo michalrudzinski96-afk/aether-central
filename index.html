@@ -6,13 +6,14 @@
   <title>Aether Central | Microsoft Business Central Experts</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
     <div class="container">
       <div class="logo">
-        <span class="logo-icon">🌌</span>
+        <img src="https://raw.githubusercontent.com/michalrudzinski96-afk/aether-central/main/assets/logo.svg" alt="Aether Central" class="logo-img">
         <span>Aether Central</span>
       </div>
       <ul>
@@ -26,6 +27,7 @@
 
   <!-- Hero -->
   <section id="home" class="hero">
+    <div id="particles-js"></div>
     <div class="hero-content">
       <h1>Elevate your <span class="gradient-text">Business Central</span><br>to the next level</h1>
       <p class="subtitle">Team of 5 expert developers specializing in customization, automation, migrations, and implementations of Microsoft Dynamics 365 Business Central.</p>
@@ -63,7 +65,7 @@
     <div class="container">
       <h2>About Us</h2>
       <p>We are a compact, highly specialized team of 5 developers with many years of experience focused exclusively on Microsoft Dynamics 365 Business Central.</p>
-      <p>We combine deep technical expertise with practical business understanding to deliver solutions that genuinely increase efficiency and generate value for our clients.</p>
+      <p>We combine deep technical expertise with practical business understanding to deliver solutions that genuinely increase efficiency.</p>
     </div>
   </section>
 
@@ -75,7 +77,7 @@
         <input type="text" id="name" placeholder="Full Name" required>
         <input type="email" id="email" placeholder="Business Email" required>
         <input type="tel" id="phone" placeholder="Phone (optional)">
-        <textarea id="message" placeholder="Describe your needs (e.g. migration, customization, automation...)" rows="6" required></textarea>
+        <textarea id="message" placeholder="Describe your needs..." rows="6" required></textarea>
         <button type="submit" class="btn-primary">Send Message</button>
       </form>
       <p id="formStatus"></p>
@@ -87,5 +89,22 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      "particles": {
+        "number": { "value": 80 },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": true },
+        "size": { "value": 2, "random": true },
+        "line_linked": { "enable": false },
+        "move": { "enable": true, "speed": 0.5, "direction": "none", "random": true }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": true, "mode": "bubble" } }
+      }
+    });
+  </script>
 </body>
 </html>
