@@ -13,34 +13,41 @@
       background: #05050f;
       color: #e0e0ff;
       overflow-x: hidden;
+      min-height: 100vh;
     }
 
-    /* === BARDZO MOCNE KOSMICZNE TŁO === */
+    /* === TŁO SUPER GROK – bardzo mocne i animowane === */
     body::before {
       content: '';
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
+      inset: 0;
       background: 
-        radial-gradient(circle at 25% 25%, rgba(168,85,247,0.5) 0%, transparent 55%),
-        radial-gradient(circle at 75% 75%, rgba(34,211,238,0.5) 0%, transparent 55%),
-        radial-gradient(circle at 50% 40%, rgba(99,102,241,0.35) 0%, transparent 65%);
-      z-index: -2;
-      pointer-events: none;
+        radial-gradient(circle at 30% 20%, rgba(168,85,247,0.55) 0%, transparent 60%),
+        radial-gradient(circle at 70% 80%, rgba(34,211,238,0.55) 0%, transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(99,102,241,0.4) 0%, transparent 75%);
+      z-index: -3;
+      animation: nebulaPulse 30s ease infinite;
     }
 
-    /* Migoczące gwiazdy */
+    @keyframes nebulaPulse {
+      0%, 100% { opacity: 0.85; }
+      50% { opacity: 1; }
+    }
+
+    /* Migoczące gwiazdy – dużo i dynamicznie */
     .stars {
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
+      inset: 0;
       background: transparent;
       box-shadow: 
         80px 120px 1px #fff, 220px 80px 1px #fff, 350px 250px 1px #fff,
         480px 150px 1px #fff, 620px 380px 1px #fff, 750px 90px 1px #fff,
         880px 420px 1px #fff, 1050px 180px 1px #fff, 180px 480px 1px #fff,
         410px 520px 1px #fff, 690px 620px 1px #fff, 920px 280px 1px #fff,
-        120px 650px 1px #fff, 550px 710px 1px #fff, 810px 50px 1px #fff;
-      animation: twinkle 3s infinite alternate ease-in-out;
-      z-index: -1;
+        120px 650px 1px #fff, 550px 710px 1px #fff, 810px 50px 1px #fff,
+        300px 100px 1px #fff, 950px 550px 1px #fff, 650px 200px 1px #fff;
+      animation: twinkle 4s infinite alternate ease-in-out;
+      z-index: -2;
       pointer-events: none;
     }
 
@@ -106,39 +113,17 @@
 
     .section { padding: 120px 20px; background: #05050f; }
     .container { max-width: 1200px; margin: 0 auto; }
-
-    form {
-      max-width: 700px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    input, textarea {
-      padding: 18px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(168,85,247,0.4);
-      border-radius: 12px;
-      color: white;
-      font-size: 1.1rem;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.06);
-      padding: 2rem;
-      border-radius: 20px;
-      border: 1px solid rgba(168,85,247,0.3);
-    }
   </style>
 </head>
 <body>
 
-  <!-- Główna sekcja hero -->
   <section id="home" class="hero">
     <div class="stars"></div>
 
-    <img src="assets/aether-central-logo.png" alt="Aether Central" class="main-logo">
+    <img 
+      src="assets/aether-central-logo.png" 
+      alt="Aether Central" 
+      class="main-logo">
 
     <h1 class="hero-title">
       Elevate your <span class="gradient-text">Business Central</span><br>to the Cosmos
@@ -156,10 +141,18 @@
     <div class="container">
       <h2>Our Services</h2>
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; margin-top:60px;">
-        <div class="card"><h3>Customization</h3><p>Extensions, new functionalities, and tailoring the system to your unique business processes.</p></div>
-        <div class="card"><h3>Process Automation</h3><p>Power Automate, AL language, and Power Platform integrations — eliminating manual work.</p></div>
-        <div class="card"><h3>Migrations &amp; Upgrades</h3><p>Safe data migration and transition to the latest versions of Business Central.</p></div>
-        <div class="card"><h3>Implementations</h3><p>End-to-end implementations — from analysis to user training.</p></div>
+        <div class="card" style="background:rgba(255,255,255,0.06); padding:2rem; border-radius:20px; border:1px solid rgba(168,85,247,0.3);">
+          <h3>Customization</h3><p>Extensions, new functionalities, and tailoring the system to your unique business processes.</p>
+        </div>
+        <div class="card" style="background:rgba(255,255,255,0.06); padding:2rem; border-radius:20px; border:1px solid rgba(168,85,247,0.3);">
+          <h3>Process Automation</h3><p>Power Automate, AL language, and Power Platform integrations — eliminating manual work.</p>
+        </div>
+        <div class="card" style="background:rgba(255,255,255,0.06); padding:2rem; border-radius:20px; border:1px solid rgba(168,85,247,0.3);">
+          <h3>Migrations &amp; Upgrades</h3><p>Safe data migration and transition to the latest versions of Business Central.</p>
+        </div>
+        <div class="card" style="background:rgba(255,255,255,0.06); padding:2rem; border-radius:20px; border:1px solid rgba(168,85,247,0.3);">
+          <h3>Implementations</h3><p>End-to-end implementations — from analysis to user training.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -172,7 +165,7 @@
     </div>
   </section>
 
-  <!-- Contact Form -->
+  <!-- Contact -->
   <section id="contact" class="section">
     <div class="container">
       <h2>Get in Touch</h2>
@@ -183,7 +176,6 @@
         <textarea id="message" placeholder="Describe your needs..." rows="6" required></textarea>
         <button type="submit" class="btn-primary">Send Message</button>
       </form>
-      <p id="formStatus" style="text-align:center; margin-top:20px;"></p>
     </div>
   </section>
 
