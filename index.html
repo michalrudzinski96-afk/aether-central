@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <style>
+    body {
+      background: #05050f;
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -92,18 +97,22 @@
   <script>
     particlesJS('particles-js', {
       "particles": {
-        "number": { "value": 80 },
-        "color": { "value": "#ffffff" },
+        "number": { "value": 150, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": ["#ffffff", "#a5b4fc", "#c4b5fd"] },
         "shape": { "type": "circle" },
-        "opacity": { "value": 0.5, "random": true },
-        "size": { "value": 2, "random": true },
+        "opacity": { "value": 0.6, "random": true },
+        "size": { "value": 2.5, "random": true },
         "line_linked": { "enable": false },
-        "move": { "enable": true, "speed": 0.5, "direction": "none", "random": true }
+        "move": { "enable": true, "speed": 0.4, "direction": "none", "random": true, "straight": false }
       },
       "interactivity": {
         "detect_on": "canvas",
-        "events": { "onhover": { "enable": true, "mode": "bubble" } }
-      }
+        "events": {
+          "onhover": { "enable": true, "mode": "bubble" },
+          "resize": true
+        }
+      },
+      "retina_detect": true
     });
   </script>
 </body>
