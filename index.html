@@ -9,31 +9,13 @@
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar">
     <div class="container">
       <div class="logo">
-        <!-- Logo dokładnie jak na początku rozmowy - duże, spiralna galaktyka + strumienie danych -->
-        <svg width="110" height="110" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="galaxy" x1="40" y1="40" x2="160" y2="160" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#22d3ee"/>
-              <stop offset="50%" stop-color="#a855f7"/>
-              <stop offset="100%" stop-color="#6366f1"/>
-            </linearGradient>
-          </defs>
-          <!-- Tło galaktyki -->
-          <circle cx="100" cy="100" r="85" fill="#0f172a" opacity="0.7"/>
-          <!-- Spiralne ramiona -->
-          <path d="M100 20 Q150 50 170 100 Q150 150 100 180 Q50 150 30 100 Q50 50 100 20" stroke="#c084fc" stroke-width="18" stroke-opacity="0.9" fill="none"/>
-          <path d="M100 28 Q138 55 160 100 Q138 145 100 172 Q62 145 40 100 Q62 55 100 28" stroke="#67e8f9" stroke-width="12" stroke-opacity="0.85" fill="none"/>
-          <!-- Strumienie danych / binary -->
-          <path d="M20 80 L45 95 M155 105 L180 120" stroke="#22d3ee" stroke-width="4" stroke-opacity="0.8"/>
-          <path d="M25 120 L50 135 M150 65 L175 80" stroke="#a855f7" stroke-width="4" stroke-opacity="0.8"/>
-          <!-- Centralny rdzeń -->
-          <circle cx="100" cy="100" r="32" fill="url(#galaxy)"/>
-          <circle cx="100" cy="100" r="14" fill="#ffffff"/>
-        </svg>
+        <!-- Twoje logo z załącznika (duże i czyste) -->
+        <img src="assets/aether-central-logo.png" alt="Aether Central" width="140" height="140">
         <span>Aether Central</span>
       </div>
       <ul>
@@ -45,7 +27,7 @@
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero z kosmicznym tłem -->
   <section id="home" class="hero">
     <canvas id="particles-js" class="particles"></canvas>
     <div class="hero-content">
@@ -55,7 +37,7 @@
     </div>
   </section>
 
-  <!-- Services, About, Contact – bez zmian -->
+  <!-- Services -->
   <section id="services" class="section">
     <div class="container">
       <h2>Our Services</h2>
@@ -68,6 +50,7 @@
     </div>
   </section>
 
+  <!-- About Us -->
   <section id="about" class="section">
     <div class="container">
       <h2>About Us</h2>
@@ -76,6 +59,7 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact" class="section">
     <div class="container">
       <h2>Get in Touch</h2>
@@ -96,20 +80,5 @@
 
   <script src="js/script.js"></script>
   <script>
-    // Particles - animowane gwiazdy
     particlesJS('particles-js', {
-      particles: {
-        number: { value: 220, density: { enable: true, value_area: 800 } },
-        color: { value: ["#22d3ee", "#a855f7", "#6366f1", "#c084fc"] },
-        shape: { type: "circle" },
-        opacity: { value: 0.8, random: true },
-        size: { value: 3, random: true },
-        move: { enable: true, speed: 0.6, direction: "none", random: true }
-      },
-      interactivity: {
-        events: { onhover: { enable: true, mode: "bubble" } }
-      }
-    });
-  </script>
-</body>
-</html>
+      particles:
