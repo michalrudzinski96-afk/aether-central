@@ -27,19 +27,18 @@
       padding: 0 20px;
     }
 
-    /* Poprawiona responsywność logo */
+    /* Logo bez podświetlenia + dobra responsywność */
     .main-logo {
       width: auto;
       max-width: 520px;
       height: auto;
       margin-bottom: 40px;
-      filter: drop-shadow(0 0 60px rgba(34, 211, 238, 0.8));
     }
 
-    /* Na telefonach logo jest trochę mniejsze */
+    /* Na telefonach logo jest mniejsze, żeby się nie ucinało */
     @media (max-width: 768px) {
       .main-logo {
-        max-width: 75vw;
+        max-width: 78vw;
       }
       .hero-title {
         font-size: 2.8rem;
@@ -146,7 +145,7 @@
   </section>
 
   <footer style="text-align:center; padding:80px 20px; background:#000000;">
-    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v1.8</p>
+    <p>&copy; 2026 Aether Central — Microsoft Business Central Experts v1.9</p>
   </footer>
 
   <script>
@@ -169,8 +168,7 @@
         status.style.color = "#22d3ee";
         document.getElementById('contactForm').reset();
       })
-      .catch((err) => {
-        console.error(err);
+      .catch(() => {
         status.textContent = "❌ Error sending message. Please try again.";
         status.style.color = "#ff6666";
       });
